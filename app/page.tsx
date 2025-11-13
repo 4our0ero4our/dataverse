@@ -1,6 +1,8 @@
 import { Navbar } from '@/app/components/layout/Navbar'
 import { Hero } from '@/app/components/layout/Hero'
 import { Features } from '@/app/components/layout/Features'
+import { HowItWorks } from '@/app/components/layout/HowItWorks'
+import { MarketplacePreview } from '@/app/components/layout/MarketplacePreview'
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Features />
+      <HowItWorks />
+      <MarketplacePreview />
     </div>
   )
 }

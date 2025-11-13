@@ -48,11 +48,14 @@ export function Features() {
       autoScrollIntervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => {
           const next = (prev + 1) % features.length
-          // Scroll to the next card
+          // Scroll to the next card with overlap calculation
           if (scrollContainerRef.current) {
             const container = scrollContainerRef.current
-            const cardWidth = container.offsetWidth
-            const scrollLeft = next * cardWidth
+            const containerWidth = container.offsetWidth
+            const cardWidth = Math.min(containerWidth - 80, 320)
+            const overlap = 60
+            const scrollDistance = cardWidth - overlap
+            const scrollLeft = next * scrollDistance
             
             container.scrollTo({
               left: scrollLeft,
@@ -100,9 +103,12 @@ export function Features() {
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       const scrollLeft = scrollContainerRef.current.scrollLeft
-      const cardWidth = scrollContainerRef.current.offsetWidth
-      const newIndex = Math.round(scrollLeft / cardWidth)
-      setCurrentIndex(newIndex)
+      const containerWidth = scrollContainerRef.current.offsetWidth
+      const cardWidth = Math.min(containerWidth - 80, 320)
+      const overlap = 60
+      const scrollDistance = cardWidth - overlap
+      const newIndex = Math.round(scrollLeft / scrollDistance)
+      setCurrentIndex(Math.min(newIndex, features.length - 1))
       
       // Pause auto-scroll when user manually scrolls
       if (autoScrollIntervalRef.current) {
@@ -117,8 +123,11 @@ export function Features() {
                 const next = (prev + 1) % features.length
                 if (scrollContainerRef.current) {
                   const container = scrollContainerRef.current
-                  const cardWidth = container.offsetWidth
-                  const scrollLeft = next * cardWidth
+                  const containerWidth = container.offsetWidth
+                  const cardWidth = Math.min(containerWidth - 80, 320)
+                  const overlap = 60
+                  const scrollDistance = cardWidth - overlap
+                  const scrollLeft = next * scrollDistance
                   
                   container.scrollTo({
                     left: scrollLeft,
@@ -217,7 +226,7 @@ export function Features() {
           ))}
         </div>
 
-        {/* Mobile Carousel - Same design as desktop */}
+        {/* Mobile Carousel - Overlapping Cards */}
         <div className="lg:hidden relative">
           <div
             ref={scrollContainerRef}
@@ -225,61 +234,79 @@ export function Features() {
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
+              paddingLeft: '24px',
+              paddingRight: '24px',
+              scrollPaddingLeft: '24px',
+              scrollPaddingRight: '24px',
             }}
             onScroll={handleScroll}
           >
-            {features.map((feature) => (
-              <div
-                key={feature.id}
-                className="flex-shrink-0 w-full px-3 snap-center"
-              >
+            {features.map((feature, index) => {
+              const isActive = index === currentIndex
+              return (
                 <div
-                  className="rounded-xl mx-auto"
+                  key={feature.id}
+                  className="flex-shrink-0 snap-center"
                   style={{
-                    background: '#303d4f',
+                    width: 'calc(100vw - 80px)',
                     maxWidth: '320px',
-                    paddingTop: '32px',
-                    paddingBottom: '32px',
-                    paddingLeft: '24px',
-                    paddingRight: '24px',
+                    marginRight: index < features.length - 1 ? '-60px' : '0',
+                    zIndex: isActive ? 10 : Math.max(1, 5 - index),
+                    transform: isActive ? 'scale(1)' : 'scale(0.95)',
+                    transition: 'transform 0.3s ease-out',
                   }}
                 >
-                  {/* Icon - Centered at top, same as desktop */}
-                  <div className="flex justify-center relative" style={{ width: '100%', height: '80px', marginBottom: '24px' }}>
-                    <div className="relative" style={{ width: '64px', height: '64px' }}>
-                      <Image
-                        src={feature.image}
-                        alt={feature.title}
-                        fill
-                        className="object-contain"
-                      />
+                  <div
+                    className="rounded-xl w-full transition-all duration-300"
+                    style={{
+                      background: '#303d4f',
+                      paddingTop: '32px',
+                      paddingBottom: '32px',
+                      paddingLeft: '24px',
+                      paddingRight: '24px',
+                      opacity: isActive ? 1 : 0.7,
+                      boxShadow: isActive 
+                        ? '0 10px 30px rgba(0, 0, 0, 0.3)' 
+                        : '0 4px 15px rgba(0, 0, 0, 0.2)',
+                    }}
+                  >
+                    {/* Icon - Centered at top, same as desktop */}
+                    <div className="flex justify-center relative" style={{ width: '100%', height: '80px', marginBottom: '24px' }}>
+                      <div className="relative" style={{ width: '64px', height: '64px' }}>
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     </div>
+                    {/* Title */}
+                    <h3 
+                      className="font-bold text-white text-center"
+                      style={{ 
+                        fontSize: '18px',
+                        lineHeight: '1.3',
+                        marginBottom: '12px',
+                      }}
+                    >
+                      {feature.title}
+                    </h3>
+                    {/* Description */}
+                    <p 
+                      className="text-center"
+                      style={{ 
+                        fontSize: '14px',
+                        lineHeight: '1.5',
+                        color: 'rgba(255, 255, 255, 0.7)',
+                      }}
+                    >
+                      {feature.description}
+                    </p>
                   </div>
-                  {/* Title */}
-                  <h3 
-                    className="font-bold text-white text-center"
-                    style={{ 
-                      fontSize: '18px',
-                      lineHeight: '1.3',
-                      marginBottom: '12px',
-                    }}
-                  >
-                    {feature.title}
-                  </h3>
-                  {/* Description */}
-                  <p 
-                    className="text-center"
-                    style={{ 
-                      fontSize: '14px',
-                      lineHeight: '1.5',
-                      color: 'rgba(255, 255, 255, 0.7)',
-                    }}
-                  >
-                    {feature.description}
-                  </p>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Pagination Dots */}
@@ -295,9 +322,12 @@ export function Features() {
                 }}
                 onClick={() => {
                   if (scrollContainerRef.current) {
-                    const cardWidth = scrollContainerRef.current.offsetWidth
+                    const containerWidth = scrollContainerRef.current.offsetWidth
+                    const cardWidth = Math.min(containerWidth - 80, 320)
+                    const overlap = 60
+                    const scrollDistance = cardWidth - overlap
                     scrollContainerRef.current.scrollTo({
-                      left: index * cardWidth,
+                      left: index * scrollDistance,
                       behavior: 'smooth',
                     })
                   }
