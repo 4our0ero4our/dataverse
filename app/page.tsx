@@ -3,6 +3,9 @@ import { Hero } from '@/app/components/layout/Hero'
 import { Features } from '@/app/components/layout/Features'
 import { HowItWorks } from '@/app/components/layout/HowItWorks'
 import { MarketplacePreview } from '@/app/components/layout/MarketplacePreview'
+import { DatasetValidation } from '@/app/components/layout/DatasetValidation'
+import { UseCases } from '@/app/components/layout/UseCases'
+import { Footer } from '@/app/components/layout/Footer'
 
 export default function Home() {
   return (
@@ -17,6 +20,9 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <MarketplacePreview />
+      <DatasetValidation />
+      <UseCases />
+      <Footer />
     </div>
   )
 }

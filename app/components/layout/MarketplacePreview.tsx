@@ -214,7 +214,7 @@ export function MarketplacePreview() {
               </div>
 
               {/* Price */}
-              <div className="mb-4">
+              <div className="mb-4" style={{ marginTop: 'auto' }}>
                 <span
                   className="font-bold"
                   style={{
@@ -335,7 +335,7 @@ export function MarketplacePreview() {
                         fontSize: '14px',
                         lineHeight: '1.5',
                         color: 'rgba(255, 255, 255, 0.7)',
-                        flexGrow: 1,
+                        minHeight: '60px',
                       }}
                     >
                       {dataset.description}
@@ -381,7 +381,7 @@ export function MarketplacePreview() {
                     </div>
 
                     {/* Price */}
-                    <div className="mb-4">
+                    <div className="mb-4" style={{ marginTop: 'auto' }}>
                       <span
                         className="font-bold"
                         style={{
