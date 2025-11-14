@@ -147,7 +147,7 @@ export function Features() {
     <section 
       className="w-full relative"
       style={{
-        background: '#1e2c40',
+        background: '#2a2a2a',
         paddingTop: '80px',
         paddingBottom: '80px',
       }}
@@ -182,7 +182,7 @@ export function Features() {
               key={feature.id}
               className="rounded-xl"
               style={{
-                background: '#303d4f',
+                background: '#404040',
                 paddingTop: '70px',
                 paddingBottom: '70px',
                 paddingLeft: '24px',
@@ -259,7 +259,7 @@ export function Features() {
                   <div
                     className="rounded-xl w-full transition-all duration-300"
                     style={{
-                      background: '#303d4f',
+                      background: '#404040',
                       paddingTop: '32px',
                       paddingBottom: '32px',
                       paddingLeft: '24px',
@@ -319,6 +319,7 @@ export function Features() {
                   width: index === currentIndex ? '12px' : '8px',
                   height: '8px',
                   background: index === currentIndex ? 'white' : 'rgba(255, 255, 255, 0.4)',
+                  cursor: 'pointer',
                 }}
                 onClick={() => {
                   if (scrollContainerRef.current) {

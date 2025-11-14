@@ -72,18 +72,21 @@ export function Hero() {
               {/* Explore Marketplace Button - Solid */}
               <Link
                 href="/marketplace"
-                className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 rounded-lg font-medium text-white transition-all duration-300 active:opacity-80 whitespace-nowrap"
+                className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 rounded-lg font-medium transition-all duration-300 active:opacity-80 whitespace-nowrap"
                 style={{
-                  background: '#6BB6FF',
+                  background: '#FFFFFF',
+                  color: '#000000',
                   border: 'none',
                   cursor: 'pointer',
                   fontSize: 'clamp(14px, 1.5vw, 16px)', // Responsive: 14px on mobile, up to 16px on desktop
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#5AA5E6'
+                  e.currentTarget.style.background = '#E5E5E5'
+                  e.currentTarget.style.color = '#000000'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#6BB6FF'
+                  e.currentTarget.style.background = '#FFFFFF'
+                  e.currentTarget.style.color = '#000000'
                 }}
               >
                 Explore Marketplace
@@ -93,19 +96,19 @@ export function Hero() {
               <button
                 className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 rounded-lg font-medium transition-all duration-300 active:opacity-80 whitespace-nowrap"
                 style={{
-                  border: `1px solid #6BB6FF`,
+                  border: `1px solid #FFFFFF`,
                   background: 'transparent',
-                  color: '#6BB6FF',
+                  color: '#FFFFFF',
                   cursor: 'pointer',
                   fontSize: 'clamp(14px, 1.5vw, 16px)', // Responsive: 14px on mobile, up to 16px on desktop
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#6BB6FF'
-                  e.currentTarget.style.color = 'white'
+                  e.currentTarget.style.background = '#FFFFFF'
+                  e.currentTarget.style.color = '#000000'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = '#6BB6FF'
+                  e.currentTarget.style.color = '#FFFFFF'
                 }}
               >
                 Connect Wallet

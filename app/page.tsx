@@ -12,7 +12,7 @@ export default function Home() {
     <div 
       className="min-h-screen w-full"
       style={{ 
-        background: 'linear-gradient(180deg, #0A1A2E 0%, #162B45 100%)'
+        background: 'linear-gradient(180deg, #000000 0%, #1a1a1a 100%)'
       }}
     >
       <Navbar />

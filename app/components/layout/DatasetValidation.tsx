@@ -38,7 +38,7 @@ export function DatasetValidation() {
     <section 
       className="w-full relative"
       style={{
-        background: '#0A1A2E', // Deep navy blue background
+        background: '#000000', // Black background
         paddingTop: 'clamp(60px, 8vw, 120px)',
         paddingBottom: 'clamp(60px, 8vw, 120px)',
       }}
@@ -84,7 +84,7 @@ export function DatasetValidation() {
               key={step.id}
               className="rounded-xl w-full transition-all duration-300"
               style={{
-                background: '#1d2c3f',
+                background: '#2a2a2a',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
                 padding: '32px',
@@ -105,10 +105,10 @@ export function DatasetValidation() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   background: 'rgba(0, 0, 0, 0.2)',
-                  border: '1px solid #39C6F4',
+                  border: '1px solid #FFFFFF',
                 }}
               >
-                <div style={{ color: '#39C6F4', display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
+                <div style={{ color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
                   <Image src={step.icon} alt={step.title} width={32} height={32} className="object-contain" />
                 </div>
               </div>

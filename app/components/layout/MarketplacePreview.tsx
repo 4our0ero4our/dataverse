@@ -73,7 +73,7 @@ export function MarketplacePreview() {
     <section 
       className="w-full relative"
       style={{
-        background: '#1e2c40', // Deep navy blue background
+        background: '#2a2a2a', // Dark gray background
         paddingTop: 'clamp(60px, 8vw, 120px)',
         paddingBottom: 'clamp(60px, 8vw, 120px)',
       }}
@@ -104,7 +104,7 @@ export function MarketplacePreview() {
             style={{
               fontFamily: 'system-ui, -apple-system, sans-serif',
               fontSize: 'clamp(16px, 1.8vw, 20px)',
-              color: '#39C6F4',
+              color: '#FFFFFF',
               lineHeight: '1.5',
             }}
           >
@@ -119,9 +119,9 @@ export function MarketplacePreview() {
               key={dataset.id}
               className="rounded-xl transition-all duration-300 hover:transform hover:scale-[1.02]"
               style={{
-                background: '#0A1A2F',
-                border: '1px solid rgba(57, 198, 244, 0.2)',
-                boxShadow: '0 4px 20px rgba(57, 198, 244, 0.1)',
+                background: '#000000',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 4px 20px rgba(255, 255, 255, 0.1)',
                 padding: '30px',
                 display: 'flex',
                 flexDirection: 'column',
@@ -140,7 +140,7 @@ export function MarketplacePreview() {
                 }}
               >
                 <div className="relative" style={{
-                     backgroundColor: '#132643', 
+                     backgroundColor: '#404040', 
                      borderRadius: '8px', 
                      padding: '10px 20px',
                      display: 'flex',
@@ -194,8 +194,8 @@ export function MarketplacePreview() {
                   className="inline-block px-3 py-1 rounded-full text-sm font-medium"
                   style={{
                     background: 'rgba(57, 198, 244, 0.15)',
-                    color: '#39C6F4',
-                    border: '1px solid #39C6F4',
+                    color: '#FFFFFF',
+                    border: '1px solid #FFFFFF',
                   }}
                 >
                   {dataset.category}
@@ -204,12 +204,12 @@ export function MarketplacePreview() {
                   <span
                     style={{
                       fontSize: '14px',
-                      color: '#39C6F4',
+                      color: '#FFFFFF',
                     }}
                   >
                     {dataset.size}
                   </span>
-                  <MdVerified color='#39C6F4' size={16} />
+                  <MdVerified color='#FFFFFF' size={16} />
                 </div>
               </div>
 
@@ -230,18 +230,19 @@ export function MarketplacePreview() {
               <button
                 className="w-full py-2.5 rounded-lg font-medium transition-all duration-300"
                 style={{
-                  background: '#0A1A2F',
-                  border: '1px solid #39C6F4',
-                  color: '#39C6F4',
+                  background: '#000000',
+                  border: '1px solid #FFFFFF',
+                  color: '#FFFFFF',
                   fontSize: '14px',
+                  cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#39C6F4'
-                  e.currentTarget.style.color = '#0A1A2E'
+                  e.currentTarget.style.background = '#FFFFFF'
+                  e.currentTarget.style.color = '#000000'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#0A1A2F'
-                  e.currentTarget.style.color = '#39C6F4'
+                  e.currentTarget.style.background = '#000000'
+                  e.currentTarget.style.color = '#FFFFFF'
                 }}
               >
                 View Dataset
@@ -283,11 +284,11 @@ export function MarketplacePreview() {
                   <div
                     className="rounded-xl w-full transition-all duration-300"
                     style={{
-                      background: '#0A1A2F',
-                      border: '1px solid rgba(57, 198, 244, 0.2)',
+                      background: '#000000',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
                       boxShadow: isActive 
-                        ? '0 10px 30px rgba(57, 198, 244, 0.2)' 
-                        : '0 4px 15px rgba(57, 198, 244, 0.1)',
+                        ? '0 10px 30px rgba(255, 255, 255, 0.2)' 
+                        : '0 4px 15px rgba(255, 255, 255, 0.1)',
                       padding: '24px',
                       display: 'flex',
                       flexDirection: 'column',
@@ -347,8 +348,8 @@ export function MarketplacePreview() {
                         className="inline-block px-3 py-1 rounded-full text-sm font-medium"
                         style={{
                           background: 'rgba(57, 198, 244, 0.15)',
-                          color: '#39C6F4',
-                          border: '1px solid #39C6F4',
+                          color: '#FFFFFF',
+                          border: '1px solid #FFFFFF',
                         }}
                       >
                         {dataset.category}
@@ -357,7 +358,7 @@ export function MarketplacePreview() {
                         <span
                           style={{
                             fontSize: '14px',
-                            color: '#39C6F4',
+                            color: '#FFFFFF',
                           }}
                         >
                           {dataset.size}
@@ -371,7 +372,7 @@ export function MarketplacePreview() {
                         >
                           <path
                             d="M13.3333 4L6 11.3333L2.66667 8"
-                            stroke="#39C6F4"
+                            stroke="#FFFFFF"
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -397,18 +398,19 @@ export function MarketplacePreview() {
                     <button
                       className="w-full py-2.5 rounded-lg font-medium transition-all duration-300"
                       style={{
-                        background: '#0A1A2F',
-                        border: '1px solid #39C6F4',
-                        color: '#39C6F4',
+                        background: '#000000',
+                        border: '1px solid #FFFFFF',
+                        color: '#FFFFFF',
                         fontSize: '14px',
+                        cursor: 'pointer',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = '#39C6F4'
-                        e.currentTarget.style.color = '#0A1A2E'
+                        e.currentTarget.style.background = '#FFFFFF'
+                        e.currentTarget.style.color = '#000000'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = '#0A1A2F'
-                        e.currentTarget.style.color = '#39C6F4'
+                        e.currentTarget.style.background = '#000000'
+                        e.currentTarget.style.color = '#FFFFFF'
                       }}
                     >
                       View Dataset
@@ -428,7 +430,8 @@ export function MarketplacePreview() {
                 style={{
                   width: index === currentIndex ? '12px' : '8px',
                   height: '8px',
-                  background: index === currentIndex ? '#39C6F4' : 'rgba(57, 198, 244, 0.4)',
+                  background: index === currentIndex ? '#FFFFFF' : 'rgba(255, 255, 255, 0.4)',
+                  cursor: 'pointer',
                 }}
                 onClick={() => {
                   if (scrollContainerRef.current) {

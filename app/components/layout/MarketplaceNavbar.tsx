@@ -1,19 +1,19 @@
 'use client'
 
 /**
- * Navbar Component for Landing Page
+ * Navbar Component for Marketplace Page
  * 
- * This navbar is specifically designed for the landing page with:
+ * This navbar is specifically designed for the marketplace page with:
  * - Gradient logo (Dataverse)
  * - Navigation links
- * - Connect Wallet and Get Started buttons
- * - Mobile hamburger menu
+ * - Connect Wallet and Upload dataset buttons
+ * - Mobile hamburger menu (matching homepage pattern)
  */
 
 import Link from 'next/link'
 import { useState } from 'react'
 
-export function Navbar() {
+export function MarketplaceNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
@@ -51,7 +51,7 @@ export function Navbar() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              fontSize: 'clamp(32px, 2vw, 40px)', // Responsive: 24px on mobile, up to 28px on desktop
+              fontSize: 'clamp(32px, 2vw, 40px)',
             }}
           >
             Dataverse
@@ -121,7 +121,7 @@ export function Navbar() {
             Connect Wallet
           </button>
 
-          {/* Get Started Button - Solid */}
+          {/* Upload dataset Button - Solid */}
           <button
             className="px-6 py-2 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
             style={{
@@ -140,7 +140,7 @@ export function Navbar() {
               e.currentTarget.style.color = '#000000'
             }}
           >
-            Get Started
+            Upload dataset
           </button>
         </div>
 
@@ -169,7 +169,7 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu Panel - Matching homepage pattern */}
       <div
         className={`lg:hidden absolute left-0 right-0 top-full transition-all duration-300 ease-in-out overflow-hidden z-50 ${
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
@@ -269,7 +269,7 @@ export function Navbar() {
                 e.currentTarget.style.color = '#000000'
               }}
             >
-              Get Started
+              Upload dataset
             </button>
           </div>
         </div>

@@ -56,7 +56,7 @@ export function HowItWorks() {
     <section 
       className="w-full relative"
       style={{
-        background: '#0A1A2F', // Deep navy blue background
+        background: '#000000', // Black background
         paddingTop: 'clamp(60px, 8vw, 120px)',
         paddingBottom: 'clamp(60px, 8vw, 120px)',
       }}
@@ -89,7 +89,7 @@ export function HowItWorks() {
             style={{
               fontFamily: 'system-ui, -apple-system, sans-serif',
               fontSize: 'clamp(16px, 1.8vw, 20px)',
-              color: '#6BB6FF',
+              color: '#FFFFFF',
               lineHeight: '1.5',
             }}
           >
@@ -110,9 +110,9 @@ export function HowItWorks() {
                 style={{
                   width: 'clamp(48px, 5vw, 64px)',
                   height: 'clamp(48px, 5vw, 64px)',
-                  backgroundColor: '#12344d',
+                  backgroundColor: '#404040',
                   color: '#FFFFFF',
-                  border: '1px solid #164561',
+                  border: '1px solid #505050',
                   fontSize: 'clamp(18px, 2vw, 24px)',
                   fontWeight: 'bold',
                   fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -125,7 +125,7 @@ export function HowItWorks() {
               <div
                 className="rounded-xl w-full transition-all duration-300 hover:transform hover:scale-[1.02]"
                 style={{
-                  background: '#1d2c3f',
+                  background: '#2a2a2a',
                   padding: '24px',
                   minHeight: '344px',
                   display: 'flex',
@@ -172,7 +172,7 @@ export function HowItWorks() {
                   style={{
                     fontFamily: 'system-ui, -apple-system, sans-serif',
                     fontSize: 'clamp(14px, 1.5vw, 16px)',
-                    color: '#6BB6FF',
+                    color: '#FFFFFF',
                     lineHeight: '1.6',
                     maxWidth: '100%',
                   }}
@@ -236,7 +236,7 @@ export function HowItWorks() {
                     <div
                       className="rounded-xl w-full transition-all duration-300"
                       style={{
-                        background: '#1d2c3f',
+                        background: '#2a2a2a',
                         padding: '24px',
                         minHeight: '344px',
                         display: 'flex',
@@ -287,7 +287,7 @@ export function HowItWorks() {
                         style={{
                           fontFamily: 'system-ui, -apple-system, sans-serif',
                           fontSize: '14px',
-                          color: '#6BB6FF',
+                          color: '#FFFFFF',
                           lineHeight: '1.6',
                           maxWidth: '100%',
                         }}
@@ -310,7 +310,8 @@ export function HowItWorks() {
                 style={{
                   width: index === currentIndex ? '12px' : '8px',
                   height: '8px',
-                  background: index === currentIndex ? '#6BB6FF' : 'rgba(107, 182, 255, 0.4)',
+                  background: index === currentIndex ? '#FFFFFF' : 'rgba(255, 255, 255, 0.4)',
+                  cursor: 'pointer',
                 }}
                 onClick={() => {
                   if (scrollContainerRef.current) {

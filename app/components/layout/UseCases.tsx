@@ -45,7 +45,7 @@ export function UseCases() {
     <section 
       className="w-full relative"
       style={{
-        background: '#1e2c40',
+        background: '#2a2a2a',
         paddingTop: 'clamp(60px, 8vw, 120px)',
         paddingBottom: 'clamp(60px, 8vw, 120px)',
       }}
@@ -76,7 +76,7 @@ export function UseCases() {
             style={{
               fontFamily: 'system-ui, -apple-system, sans-serif',
               fontSize: 'clamp(16px, 2vw, 22px)',
-              color: '#5895d2',
+              color: '#FFFFFF',
               lineHeight: '1.6',
             }}
           >
@@ -91,7 +91,7 @@ export function UseCases() {
               key={useCase.id}
               className="rounded-xl transition-all duration-300 hover:scale-[1.02]"
               style={{
-                background: '#2a405c',
+                background: '#404040',
                 paddingTop: 'clamp(40px, 6vw, 70px)',
                 paddingBottom: 'clamp(40px, 6vw, 70px)',
                 paddingLeft: 'clamp(20px, 3vw, 32px)',
@@ -137,7 +137,7 @@ export function UseCases() {
                   fontFamily: 'system-ui, -apple-system, sans-serif',
                   fontSize: 'clamp(14px, 1.6vw, 16px)',
                   lineHeight: '1.5',
-                  color: '#5895d2',
+                  color: '#FFFFFF',
                 }}
               >
                 {useCase.description}
