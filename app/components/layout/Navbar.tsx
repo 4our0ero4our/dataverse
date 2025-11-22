@@ -12,6 +12,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { ConnectWallet } from '@/app/components/wallet/ConnectWallet'
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -99,30 +100,10 @@ export function Navbar() {
 
         {/* Desktop Action Buttons - Hidden on mobile */}
         <div className="hidden lg:flex items-center" style={{ gap: '12px' }}>
-          {/* Connect Wallet Button - Outlined */}
-          <button
-            className="px-6 py-2 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
-            style={{
-              border: `1px solid #FFFFFF`,
-              background: 'transparent',
-              color: '#FFFFFF',
-              cursor: 'pointer',
-              fontSize: '14px',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#FFFFFF'
-              e.currentTarget.style.color = '#000000'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.color = '#FFFFFF'
-            }}
-          >
-            Connect Wallet
-          </button>
+          <ConnectWallet />
 
           {/* Get Started Button - Solid */}
-          <button
+          {/* <button
             className="px-6 py-2 rounded-lg font-medium transition-all duration-300 whitespace-nowrap"
             style={{
               background: '#FFFFFF',
@@ -141,7 +122,7 @@ export function Navbar() {
             }}
           >
             Get Started
-          </button>
+          </button> */}
         </div>
 
         {/* Hamburger Menu Button - Visible on mobile */}
@@ -225,27 +206,9 @@ export function Navbar() {
 
           {/* Mobile Action Buttons */}
           <div className="flex flex-col pt-4 border-t" style={{ gap: '12px', borderColor: 'rgba(156, 163, 175, 0.3)' }}>
-            <button
-              onClick={closeMobileMenu}
-              className="w-full px-6 py-3 rounded-lg font-medium transition-all duration-300"
-              style={{
-                border: `1px solid #FFFFFF`,
-                background: 'transparent',
-                color: '#FFFFFF',
-                cursor: 'pointer',
-                fontSize: '14px',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#FFFFFF'
-                e.currentTarget.style.color = 'white'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = '#FFFFFF'
-              }}
-            >
-              Connect Wallet
-            </button>
+            <div onClick={closeMobileMenu}>
+              <ConnectWallet />
+            </div>
             <button
               onClick={closeMobileMenu}
               className="w-full px-6 py-3 rounded-lg font-medium transition-all duration-300"

@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "The market for verified, secured data",
 };
 
+import { SuiProvider } from '@/app/providers/SuiProvider';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SuiProvider>{children}</SuiProvider>
       </body>
     </html>
   );
