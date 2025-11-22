@@ -70,7 +70,7 @@ export function MarketplacePreview() {
   }
 
   return (
-    <section 
+    <section
       className="w-full relative"
       style={{
         background: '#2a2a2a', // Dark gray background
@@ -78,7 +78,7 @@ export function MarketplacePreview() {
         paddingBottom: 'clamp(60px, 8vw, 120px)',
       }}
     >
-      <div 
+      <div
         className="mx-auto"
         style={{
           maxWidth: '1440px',
@@ -88,7 +88,7 @@ export function MarketplacePreview() {
       >
         {/* Heading Section */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 
+          <h2
             className="font-bold text-white mb-4 md:mb-6"
             style={{
               fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -99,7 +99,7 @@ export function MarketplacePreview() {
           >
             Discover high-quality, verified datasets.
           </h2>
-          <p 
+          <p
             className="text-gray-300"
             style={{
               fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -128,7 +128,7 @@ export function MarketplacePreview() {
               }}
             >
               {/* Icon */}
-              <div 
+              <div
                 className="relative mb-4"
                 style={{
                   width: '100%',
@@ -140,15 +140,15 @@ export function MarketplacePreview() {
                 }}
               >
                 <div className="relative" style={{
-                     backgroundColor: '#404040', 
-                     borderRadius: '8px', 
-                     padding: '10px 20px',
-                     display: 'flex',
-                     justifyContent: 'center',
-                     alignItems: 'center',
-                     minHeight: '80px',
-                     minWidth: '80px',
-                    }}>
+                  backgroundColor: '#404040',
+                  borderRadius: '8px',
+                  padding: '10px 20px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  minHeight: '80px',
+                  minWidth: '80px',
+                }}>
                   <Image
                     src={dataset.icon}
                     alt={dataset.title}
@@ -163,7 +163,7 @@ export function MarketplacePreview() {
               </div>
 
               {/* Title */}
-              <h3 
+              <h3
                 className="font-bold text-white mb-2"
                 style={{
                   fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -175,7 +175,7 @@ export function MarketplacePreview() {
               </h3>
 
               {/* Description */}
-              <p 
+              <p
                 className="mb-4"
                 style={{
                   fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -193,9 +193,9 @@ export function MarketplacePreview() {
                 <span
                   className="inline-block px-3 py-1 rounded-full text-sm font-medium"
                   style={{
-                    background: 'rgba(57, 198, 244, 0.15)',
-                    color: '#FFFFFF',
-                    border: '1px solid #FFFFFF',
+                    background: 'rgba(59, 130, 246, 0.15)',
+                    color: '#60a5fa',
+                    border: '1px solid rgba(59, 130, 246, 0.3)',
                   }}
                 >
                   {dataset.category}
@@ -230,19 +230,20 @@ export function MarketplacePreview() {
               <button
                 className="w-full py-2.5 rounded-lg font-medium transition-all duration-300"
                 style={{
-                  background: '#000000',
-                  border: '1px solid #FFFFFF',
+                  background: 'linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)',
+                  border: 'none',
                   color: '#FFFFFF',
                   fontSize: '14px',
                   cursor: 'pointer',
+                  boxShadow: '0 2px 8px rgba(59, 130, 246, 0.25)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF'
-                  e.currentTarget.style.color = '#000000'
+                  e.currentTarget.style.background = 'linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%)'
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.35)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#000000'
-                  e.currentTarget.style.color = '#FFFFFF'
+                  e.currentTarget.style.background = 'linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)'
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.25)'
                 }}
               >
                 View Dataset
@@ -286,8 +287,8 @@ export function MarketplacePreview() {
                     style={{
                       background: '#000000',
                       border: '1px solid rgba(255, 255, 255, 0.2)',
-                      boxShadow: isActive 
-                        ? '0 10px 30px rgba(255, 255, 255, 0.2)' 
+                      boxShadow: isActive
+                        ? '0 10px 30px rgba(255, 255, 255, 0.2)'
                         : '0 4px 15px rgba(255, 255, 255, 0.1)',
                       padding: '24px',
                       display: 'flex',
@@ -296,7 +297,7 @@ export function MarketplacePreview() {
                     }}
                   >
                     {/* Icon */}
-                    <div 
+                    <div
                       className="relative mb-4"
                       style={{
                         width: '100%',
@@ -317,7 +318,7 @@ export function MarketplacePreview() {
                     </div>
 
                     {/* Title */}
-                    <h3 
+                    <h3
                       className="font-bold text-white mb-2"
                       style={{
                         fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -329,7 +330,7 @@ export function MarketplacePreview() {
                     </h3>
 
                     {/* Description */}
-                    <p 
+                    <p
                       className="mb-4"
                       style={{
                         fontFamily: 'system-ui, -apple-system, sans-serif',

@@ -5,14 +5,14 @@ import Image from 'next/image'
 
 export function Hero() {
   return (
-    <section 
+    <section
       className="w-full relative overflow-hidden"
       style={{
         background: 'transparent', // Background comes from page wrapper
         minHeight: 'calc(100vh - 104px)',
       }}
     >
-      <div 
+      <div
         className="mx-auto py-12 md:py-16 lg:py-24"
         style={{
           maxWidth: '1440px',
@@ -25,12 +25,12 @@ export function Hero() {
           <div className="flex flex-col space-y-5 md:space-y-6 lg:space-y-8 order-2 lg:order-1">
             {/* Badge */}
             <div className="inline-flex items-center">
-              <span 
+              <span
                 className="px-3 py-1.5 md:px-4 md:py-2 rounded font-medium"
                 style={{
-                  background: 'rgba(17, 24, 39, 0.8)',
-                  color: '#9CA3AF',
-                  border: '1px solid rgba(156, 163, 175, 0.2)',
+                  background: 'rgba(59, 130, 246, 0.15)',
+                  color: '#60a5fa',
+                  border: '1px solid rgba(59, 130, 246, 0.3)',
                   fontSize: 'clamp(12px, 1.2vw, 14px)', // Responsive: 12px on mobile, up to 14px on desktop
                 }}
               >
@@ -39,7 +39,7 @@ export function Hero() {
             </div>
 
             {/* Main Heading */}
-            <h1 
+            <h1
               className="font-bold leading-[1.1] text-white"
               style={{
                 fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -56,7 +56,7 @@ export function Hero() {
             </h1>
 
             {/* Description */}
-            <p 
+            <p
               className="text-gray-300 max-w-2xl leading-relaxed"
               style={{
                 fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -74,19 +74,20 @@ export function Hero() {
                 href="/marketplace"
                 className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 rounded-lg font-medium transition-all duration-300 active:opacity-80 whitespace-nowrap"
                 style={{
-                  background: '#FFFFFF',
-                  color: '#000000',
+                  background: 'linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)',
+                  color: '#FFFFFF',
                   border: 'none',
                   cursor: 'pointer',
                   fontSize: 'clamp(14px, 1.5vw, 16px)', // Responsive: 14px on mobile, up to 16px on desktop
+                  boxShadow: '0 4px 14px rgba(59, 130, 246, 0.25)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#E5E5E5'
-                  e.currentTarget.style.color = '#000000'
+                  e.currentTarget.style.background = 'linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%)'
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.35)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF'
-                  e.currentTarget.style.color = '#000000'
+                  e.currentTarget.style.background = 'linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)'
+                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(59, 130, 246, 0.25)'
                 }}
               >
                 Explore Marketplace
@@ -96,19 +97,19 @@ export function Hero() {
               <button
                 className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 rounded-lg font-medium transition-all duration-300 active:opacity-80 whitespace-nowrap"
                 style={{
-                  border: `1px solid #FFFFFF`,
+                  border: `1px solid rgba(59, 130, 246, 0.5)`,
                   background: 'transparent',
                   color: '#FFFFFF',
                   cursor: 'pointer',
                   fontSize: 'clamp(14px, 1.5vw, 16px)', // Responsive: 14px on mobile, up to 16px on desktop
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF'
-                  e.currentTarget.style.color = '#000000'
+                  e.currentTarget.style.background = 'rgba(59, 130, 246, 0.1)'
+                  e.currentTarget.style.borderColor = '#3b82f6'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = '#FFFFFF'
+                  e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.5)'
                 }}
               >
                 Connect Wallet
@@ -118,13 +119,13 @@ export function Hero() {
 
           {/* Right Section - Laptop Image */}
           <div className="flex items-center justify-center order-1 lg:order-2 relative">
-            <div 
+            <div
               className="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl"
               style={{
                 perspective: '1000px',
               }}
             >
-              <div 
+              <div
                 className="relative aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] transition-transform duration-300 ease-out"
                 style={{
                   transformStyle: 'preserve-3d',

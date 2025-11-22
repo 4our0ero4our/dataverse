@@ -223,7 +223,7 @@ export function MarketplaceGrid({
   }, [searchQuery, selectedCategory, selectedFileType, selectedSort, isVerifiedOnly])
 
   return (
-    <section 
+    <section
       className="w-full"
       style={{
         background: '#000000',
@@ -231,7 +231,7 @@ export function MarketplaceGrid({
         paddingBottom: 'clamp(60px, 8vw, 100px)',
       }}
     >
-      <div 
+      <div
         className="mx-auto"
         style={{
           maxWidth: '1440px',
@@ -241,7 +241,7 @@ export function MarketplaceGrid({
       >
         {/* Results Count */}
         <div className="mb-6">
-          <p 
+          <p
             style={{
               color: 'rgba(255, 255, 255, 0.7)',
               fontSize: 'clamp(14px, 1.5vw, 16px)',
@@ -259,129 +259,132 @@ export function MarketplaceGrid({
               {filteredDatasets
                 .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                 .map((dataset) => (
-              <div
-                key={dataset.id}
-                className="rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02]"
-                style={{
-                  background: '#1a1a1a',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  padding: '10px',
-                }}
-              >
-                {/* Image */}
-                <div 
-                  className="relative w-full"
-                  style={{
-                    aspectRatio: '16/9',
-                    background: '#2a2a2a',
-                    borderRadius: '10px',
-                    overflow: 'hidden',
-                  }}
-                >
-                  <Image
-                    src={dataset.image}
-                    alt={dataset.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="py-3 flex flex-col flex-1">
-                  {/* Title and Verified Badge */}
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 
-                      className="font-bold text-white flex-1"
-                      style={{
-                        fontSize: 'clamp(16px, 1.8vw, 18px)',
-                        fontFamily: 'system-ui, -apple-system, sans-serif',
-                        lineHeight: '1.3',
-                      }}
-                    >
-                      {dataset.title}
-                    </h3>
-                    {dataset.verified && (
-                      <span
-                        className="px-2 py-1 rounded text-xs font-medium whitespace-nowrap"
-                        style={{
-                          background: 'rgba(255, 255, 255, 0.15)',
-                          color: '#FFFFFF',
-                          fontSize: '12px',
-                          border: '1px solid rgba(255, 255, 255, 0.3)',
-                        }}
-                      >
-                        Verified
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Description */}
-                  <p 
-                    className="mb-4 flex-1"
+                  <div
+                    key={dataset.id}
+                    className="rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02]"
                     style={{
-                      color: 'rgba(255, 255, 255, 0.7)',
-                      fontSize: 'clamp(13px, 1.4vw, 14px)',
-                      fontFamily: 'system-ui, -apple-system, sans-serif',
-                      lineHeight: '1.5',
+                      background: '#1a1a1a',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      padding: '10px',
                     }}
                   >
-                    {dataset.description}
-                  </p>
+                    {/* Image */}
+                    <div
+                      className="relative w-full"
+                      style={{
+                        aspectRatio: '16/9',
+                        background: '#2a2a2a',
+                        borderRadius: '10px',
+                        overflow: 'hidden',
+                      }}
+                    >
+                      <Image
+                        src={dataset.image}
+                        alt={dataset.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {dataset.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 rounded-full text-xs font-medium"
+                    {/* Content */}
+                    <div className="py-3 flex flex-col flex-1">
+                      {/* Title and Verified Badge */}
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h3
+                          className="font-bold text-white flex-1"
+                          style={{
+                            fontSize: 'clamp(16px, 1.8vw, 18px)',
+                            fontFamily: 'system-ui, -apple-system, sans-serif',
+                            lineHeight: '1.3',
+                          }}
+                        >
+                          {dataset.title}
+                        </h3>
+                        {dataset.verified && (
+                          <span
+                            className="px-2 py-1 rounded text-xs font-medium whitespace-nowrap"
+                            style={{
+                              background: 'rgba(59, 130, 246, 0.15)',
+                              color: '#60a5fa',
+                              fontSize: '12px',
+                              border: '1px solid rgba(59, 130, 246, 0.3)',
+                            }}
+                          >
+                            Verified
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Description */}
+                      <p
+                        className="mb-4 flex-1"
                         style={{
-                          background: 'rgba(255, 255, 255, 0.1)',
-                          color: 'rgba(255, 255, 255, 0.8)',
-                          fontSize: '12px',
+                          color: 'rgba(255, 255, 255, 0.7)',
+                          fontSize: 'clamp(13px, 1.4vw, 14px)',
                           fontFamily: 'system-ui, -apple-system, sans-serif',
+                          lineHeight: '1.5',
                         }}
                       >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                        {dataset.description}
+                      </p>
 
-                  {/* Price and Button */}
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
-                    <span
-                      className="font-bold"
-                      style={{
-                        color: '#FFFFFF',
-                        fontSize: 'clamp(18px, 2vw, 20px)',
-                        fontFamily: 'system-ui, -apple-system, sans-serif',
-                      }}
-                    >
-                      {dataset.price}
-                    </span>
-                    <button
-                      className="px-4 py-2 rounded-lg font-medium transition-all duration-300"
-                      style={{
-                        background: '#FFFFFF',
-                        color: '#000000',
-                        border: 'none',
-                        fontSize: '14px',
-                        fontFamily: 'system-ui, -apple-system, sans-serif',
-                        cursor: 'pointer',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = '#E5E5E5'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = '#FFFFFF'
-                      }}
-                    >
-                      View details
-                    </button>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {dataset.tags.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 rounded-full text-xs font-medium"
+                            style={{
+                              background: 'rgba(255, 255, 255, 0.1)',
+                              color: 'rgba(255, 255, 255, 0.8)',
+                              fontSize: '12px',
+                              fontFamily: 'system-ui, -apple-system, sans-serif',
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Price and Button */}
+                      <div className="flex items-center justify-between mt-auto pt-4 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+                        <span
+                          className="font-bold"
+                          style={{
+                            color: '#FFFFFF',
+                            fontSize: 'clamp(18px, 2vw, 20px)',
+                            fontFamily: 'system-ui, -apple-system, sans-serif',
+                          }}
+                        >
+                          {dataset.price}
+                        </span>
+                        <button
+                          className="px-4 py-2 rounded-lg font-medium transition-all duration-300"
+                          style={{
+                            background: 'linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)',
+                            color: '#FFFFFF',
+                            border: 'none',
+                            fontSize: '14px',
+                            fontFamily: 'system-ui, -apple-system, sans-serif',
+                            cursor: 'pointer',
+                            boxShadow: '0 2px 8px rgba(59, 130, 246, 0.25)',
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = 'linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%)'
+                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.35)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = 'linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)'
+                            e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.25)'
+                          }}
+                        >
+                          View details
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
                 ))}
             </div>
 
@@ -390,7 +393,7 @@ export function MarketplaceGrid({
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-8 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
                 {/* Results Info */}
                 <div>
-                  <p 
+                  <p
                     style={{
                       color: 'rgba(255, 255, 255, 0.7)',
                       fontSize: 'clamp(13px, 1.4vw, 14px)',
@@ -526,7 +529,7 @@ export function MarketplaceGrid({
           </>
         ) : (
           <div className="text-center py-16">
-            <p 
+            <p
               style={{
                 color: 'rgba(255, 255, 255, 0.7)',
                 fontSize: 'clamp(16px, 1.8vw, 18px)',

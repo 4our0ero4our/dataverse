@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 
 interface Feature {
@@ -40,65 +40,6 @@ const features: Feature[] = [
 export function Features() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null)
-
-  // Auto-scroll functionality for mobile
-  useEffect(() => {
-    const startAutoScroll = () => {
-      autoScrollIntervalRef.current = setInterval(() => {
-        setCurrentIndex((prev) => {
-          const next = (prev + 1) % features.length
-          // Scroll to the next card with overlap calculation
-          if (scrollContainerRef.current) {
-            const container = scrollContainerRef.current
-            const containerWidth = container.offsetWidth
-            const cardWidth = Math.min(containerWidth - 80, 320)
-            const overlap = 60
-            const scrollDistance = cardWidth - overlap
-            const scrollLeft = next * scrollDistance
-            
-            container.scrollTo({
-              left: scrollLeft,
-              behavior: 'smooth',
-            })
-          }
-          return next
-        })
-      }, 3000) // Change card every 3 seconds
-    }
-
-    // Only auto-scroll on mobile
-    const checkAndStart = () => {
-      const isMobile = window.innerWidth < 1024
-      if (isMobile && scrollContainerRef.current) {
-        // Reset scroll position
-        scrollContainerRef.current.scrollLeft = 0
-        setCurrentIndex(0)
-        startAutoScroll()
-      }
-    }
-
-    // Initial check
-    checkAndStart()
-
-    // Handle window resize
-    const handleResize = () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current)
-        autoScrollIntervalRef.current = null
-      }
-      checkAndStart()
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current)
-      }
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
 
   const handleScroll = () => {
     if (scrollContainerRef.current) {
@@ -109,42 +50,11 @@ export function Features() {
       const scrollDistance = cardWidth - overlap
       const newIndex = Math.round(scrollLeft / scrollDistance)
       setCurrentIndex(Math.min(newIndex, features.length - 1))
-      
-      // Pause auto-scroll when user manually scrolls
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current)
-        autoScrollIntervalRef.current = null
-        
-        // Resume auto-scroll after 5 seconds of no manual scrolling
-        setTimeout(() => {
-          if (window.innerWidth < 1024 && scrollContainerRef.current) {
-            autoScrollIntervalRef.current = setInterval(() => {
-              setCurrentIndex((prev) => {
-                const next = (prev + 1) % features.length
-                if (scrollContainerRef.current) {
-                  const container = scrollContainerRef.current
-                  const containerWidth = container.offsetWidth
-                  const cardWidth = Math.min(containerWidth - 80, 320)
-                  const overlap = 60
-                  const scrollDistance = cardWidth - overlap
-                  const scrollLeft = next * scrollDistance
-                  
-                  container.scrollTo({
-                    left: scrollLeft,
-                    behavior: 'smooth',
-                  })
-                }
-                return next
-              })
-            }, 3000)
-          }
-        }, 5000)
-      }
     }
   }
 
   return (
-    <section 
+    <section
       className="w-full relative"
       style={{
         background: '#2a2a2a',
@@ -152,7 +62,7 @@ export function Features() {
         paddingBottom: '80px',
       }}
     >
-      <div 
+      <div
         className="mx-auto"
         style={{
           maxWidth: '1440px',
@@ -161,7 +71,7 @@ export function Features() {
         }}
       >
         {/* Heading */}
-        <h2 
+        <h2
           className="text-center font-bold text-white"
           style={{
             fontSize: 'clamp(24px, 3vw, 40px)',
@@ -180,13 +90,23 @@ export function Features() {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="rounded-xl"
+              className="rounded-xl transition-all duration-300 hover:scale-105"
               style={{
-                background: '#404040',
+                background: '#1a1a1a',
+                border: '1px solid rgba(59, 130, 246, 0.2)',
                 paddingTop: '70px',
                 paddingBottom: '70px',
                 paddingLeft: '24px',
                 paddingRight: '24px',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.5)'
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.15)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.2)'
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)'
               }}
             >
               {/* Icon - Centered at top */}
@@ -201,9 +121,9 @@ export function Features() {
                 </div>
               </div>
               {/* Title */}
-              <h3 
+              <h3
                 className="font-bold text-white text-center"
-                style={{ 
+                style={{
                   fontSize: '18px',
                   lineHeight: '1.3',
                   marginBottom: '12px',
@@ -212,9 +132,9 @@ export function Features() {
                 {feature.title}
               </h3>
               {/* Description */}
-              <p 
+              <p
                 className="text-center"
-                style={{ 
+                style={{
                   fontSize: '14px',
                   lineHeight: '1.5',
                   color: 'rgba(255, 255, 255, 0.7)',
@@ -259,14 +179,15 @@ export function Features() {
                   <div
                     className="rounded-xl w-full transition-all duration-300"
                     style={{
-                      background: '#404040',
+                      background: '#1a1a1a',
+                      border: `1px solid ${isActive ? 'rgba(59, 130, 246, 0.5)' : 'rgba(59, 130, 246, 0.2)'}`,
                       paddingTop: '32px',
                       paddingBottom: '32px',
                       paddingLeft: '24px',
                       paddingRight: '24px',
                       opacity: isActive ? 1 : 0.7,
-                      boxShadow: isActive 
-                        ? '0 10px 30px rgba(0, 0, 0, 0.3)' 
+                      boxShadow: isActive
+                        ? '0 10px 30px rgba(59, 130, 246, 0.2)'
                         : '0 4px 15px rgba(0, 0, 0, 0.2)',
                     }}
                   >
@@ -282,9 +203,9 @@ export function Features() {
                       </div>
                     </div>
                     {/* Title */}
-                    <h3 
+                    <h3
                       className="font-bold text-white text-center"
-                      style={{ 
+                      style={{
                         fontSize: '18px',
                         lineHeight: '1.3',
                         marginBottom: '12px',
@@ -293,9 +214,9 @@ export function Features() {
                       {feature.title}
                     </h3>
                     {/* Description */}
-                    <p 
+                    <p
                       className="text-center"
-                      style={{ 
+                      style={{
                         fontSize: '14px',
                         lineHeight: '1.5',
                         color: 'rgba(255, 255, 255, 0.7)',
@@ -307,36 +228,6 @@ export function Features() {
                 </div>
               )
             })}
-          </div>
-
-          {/* Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {features.map((_, index) => (
-              <button
-                key={index}
-                className="rounded-full transition-all duration-300"
-                style={{
-                  width: index === currentIndex ? '12px' : '8px',
-                  height: '8px',
-                  background: index === currentIndex ? 'white' : 'rgba(255, 255, 255, 0.4)',
-                  cursor: 'pointer',
-                }}
-                onClick={() => {
-                  if (scrollContainerRef.current) {
-                    const containerWidth = scrollContainerRef.current.offsetWidth
-                    const cardWidth = Math.min(containerWidth - 80, 320)
-                    const overlap = 60
-                    const scrollDistance = cardWidth - overlap
-                    scrollContainerRef.current.scrollTo({
-                      left: index * scrollDistance,
-                      behavior: 'smooth',
-                    })
-                  }
-                  setCurrentIndex(index)
-                }}
-                aria-label={`Go to feature ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </div>
