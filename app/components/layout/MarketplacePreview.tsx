@@ -71,6 +71,7 @@ export function MarketplacePreview() {
 
   return (
     <section
+      id="categories"
       className="w-full relative"
       style={{
         background: '#2a2a2a', // Dark gray background

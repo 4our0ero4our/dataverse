@@ -25,7 +25,7 @@ export function MarketplaceNavbar() {
   }
 
   return (
-    <nav 
+    <nav
       className="w-full relative"
       style={{
         background: 'transparent',
@@ -33,9 +33,9 @@ export function MarketplaceNavbar() {
         paddingBottom: '24px',
       }}
     >
-      <div 
+      <div
         className="mx-auto flex items-center justify-between flex-wrap"
-        style={{ 
+        style={{
           gap: '10px',
           maxWidth: '1440px',
           paddingLeft: 'clamp(24px, 5vw, 80px)',
@@ -44,7 +44,7 @@ export function MarketplaceNavbar() {
       >
         {/* Logo with gradient */}
         <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
-          <span 
+          <span
             className="font-bold"
             style={{
               background: 'linear-gradient(90deg, #FFFFFF 0%, #808080 100%)',
@@ -60,40 +60,40 @@ export function MarketplaceNavbar() {
 
         {/* Navigation Links - Hidden on mobile, visible on larger screens */}
         <div className="hidden lg:flex items-center" style={{ gap: '40px' }}>
-          <Link 
-            href="/marketplace" 
+          <Link
+            href="/marketplace"
             className="font-medium text-gray-300 hover:text-white transition-colors"
             style={{ fontSize: '14px' }}
           >
             Marketplace
           </Link>
-          <Link 
-            href="/categories" 
+          <Link
+            href="/#categories"
             className="font-medium text-gray-300 hover:text-white transition-colors"
             style={{ fontSize: '14px' }}
           >
             Categories
           </Link>
-          <Link 
-            href="/how-it-works" 
+          <Link
+            href="/#how-it-works"
             className="font-medium text-gray-300 hover:text-white transition-colors"
             style={{ fontSize: '14px' }}
           >
             How It Works
           </Link>
-          <Link 
-            href="/pricing" 
+          <Link
+            href="/pricing"
             className="font-medium text-gray-300 hover:text-white transition-colors"
             style={{ fontSize: '14px' }}
           >
             Pricing
           </Link>
-          <Link 
-            href="/about" 
+          <Link
+            href="/upload"
             className="font-medium text-gray-300 hover:text-white transition-colors"
             style={{ fontSize: '14px' }}
           >
-            About
+            Upload Dataset
           </Link>
         </div>
 
@@ -151,29 +151,25 @@ export function MarketplaceNavbar() {
           aria-label="Toggle menu"
           style={{ cursor: 'pointer' }}
         >
-          <span 
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : '-translate-y-1'
-            }`}
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : '-translate-y-1'
+              }`}
           />
-          <span 
-            className={`block w-6 h-0.5 bg-white my-1 transition-all duration-300 ${
-              isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-            }`}
+          <span
+            className={`block w-6 h-0.5 bg-white my-1 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+              }`}
           />
-          <span 
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'
-            }`}
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'
+              }`}
           />
         </button>
       </div>
 
       {/* Mobile Menu Panel - Matching homepage pattern */}
       <div
-        className={`lg:hidden absolute left-0 right-0 top-full transition-all duration-300 ease-in-out overflow-hidden z-50 ${
-          isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`lg:hidden absolute left-0 right-0 top-full transition-all duration-300 ease-in-out overflow-hidden z-50 ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          }`}
         style={{
           background: 'linear-gradient(180deg, #000000 0%, #1a1a1a 100%)',
           paddingLeft: 'clamp(24px, 5vw, 80px)',
@@ -194,7 +190,7 @@ export function MarketplaceNavbar() {
               Marketplace
             </Link>
             <Link
-              href="/categories"
+              href="/#categories"
               onClick={closeMobileMenu}
               className="font-medium text-white transition-colors py-2"
               style={{ fontSize: '16px' }}
@@ -202,7 +198,7 @@ export function MarketplaceNavbar() {
               Categories
             </Link>
             <Link
-              href="/how-it-works"
+              href="/#how-it-works"
               onClick={closeMobileMenu}
               className="font-medium text-white transition-colors py-2"
               style={{ fontSize: '16px' }}
@@ -218,12 +214,12 @@ export function MarketplaceNavbar() {
               Pricing
             </Link>
             <Link
-              href="/about"
+              href="/upload"
               onClick={closeMobileMenu}
               className="font-medium text-white transition-colors py-2"
               style={{ fontSize: '16px' }}
             >
-              About
+              Upload Dataset
             </Link>
           </div>
 

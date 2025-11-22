@@ -53,7 +53,8 @@ export function HowItWorks() {
   }
 
   return (
-    <section 
+    <section
+      id="how-it-works"
       className="w-full relative"
       style={{
         background: '#000000', // Black background
@@ -61,7 +62,7 @@ export function HowItWorks() {
         paddingBottom: 'clamp(60px, 8vw, 120px)',
       }}
     >
-      <div 
+      <div
         className="mx-auto"
         style={{
           maxWidth: '1440px',
@@ -71,7 +72,7 @@ export function HowItWorks() {
       >
         {/* Heading Section */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 
+          <h2
             className="font-bold text-white mb-4 md:mb-6"
             style={{
               fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -80,11 +81,11 @@ export function HowItWorks() {
               letterSpacing: '-0.02em',
             }}
           >
-            A simple and secure way to trade 
+            A simple and secure way to trade
             <br />
             verified data.
           </h2>
-          <p 
+          <p
             className="text-gray-300"
             style={{
               fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -105,7 +106,7 @@ export function HowItWorks() {
               className="flex flex-col items-center"
             >
               {/* Number Badge */}
-              <div 
+              <div
                 className="rounded-full flex items-center justify-center mb-4 md:mb-6"
                 style={{
                   width: 'clamp(48px, 5vw, 64px)',
@@ -135,7 +136,7 @@ export function HowItWorks() {
                 }}
               >
                 {/* Icon */}
-                <div 
+                <div
                   className="relative mb-6 md:mb-8 mt-8"
                   style={{
                     width: 'clamp(64px, 8vw, 80px)',
@@ -155,7 +156,7 @@ export function HowItWorks() {
                 </div>
 
                 {/* Title */}
-                <h3 
+                <h3
                   className="font-bold text-white mb-3 md:mb-4"
                   style={{
                     fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -167,7 +168,7 @@ export function HowItWorks() {
                 </h3>
 
                 {/* Description */}
-                <p 
+                <p
                   className="text-gray-300"
                   style={{
                     fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -216,7 +217,7 @@ export function HowItWorks() {
                 >
                   <div className="flex flex-col items-center">
                     {/* Number Badge */}
-                    <div 
+                    <div
                       className="rounded-full flex items-center justify-center mb-4"
                       style={{
                         width: '48px',
@@ -244,13 +245,13 @@ export function HowItWorks() {
                         alignItems: 'center',
                         textAlign: 'center',
                         opacity: isActive ? 1 : 0.7,
-                        boxShadow: isActive 
-                          ? '0 10px 30px rgba(0, 0, 0, 0.3)' 
+                        boxShadow: isActive
+                          ? '0 10px 30px rgba(0, 0, 0, 0.3)'
                           : '0 4px 15px rgba(0, 0, 0, 0.2)',
                       }}
                     >
                       {/* Icon */}
-                      <div 
+                      <div
                         className="relative mb-6 mt-8"
                         style={{
                           width: '64px',
@@ -270,7 +271,7 @@ export function HowItWorks() {
                       </div>
 
                       {/* Title */}
-                      <h3 
+                      <h3
                         className="font-bold text-white mb-3"
                         style={{
                           fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -282,7 +283,7 @@ export function HowItWorks() {
                       </h3>
 
                       {/* Description */}
-                      <p 
+                      <p
                         className="text-gray-300"
                         style={{
                           fontFamily: 'system-ui, -apple-system, sans-serif',
